@@ -1,0 +1,40 @@
+{
+  "source": "https://ovk-snab.com",
+  "exportedAt": "2026-06-15T11:32:50Z",
+  "durationSeconds": 232.1,
+  "stats": {
+    "products": 4209,
+    "categories": 121,
+    "pages": 6,
+    "brands": 34,
+    "uniqueImages": 1449,
+    "productsWithArticle": 4209,
+    "productsWithLocalImage": 4198
+  },
+  "imagesDownloaded": 1449,
+  "imagesFailed": 0,
+  "dataFiles": [
+    "data/catalog.json",
+    "data/categories.json",
+    "data/pages.json",
+    "data/brands.json"
+  ],
+  "imageDir": "images/products/",
+  "notes": {
+    "article": "Normalized from attributes Артикул / Номенклатурный номер or product name suffix",
+    "prices": "Integer RUB values from WooCommerce store API",
+    "images": "Deduplicated by base URL; shared across similar products"
+  },
+  "seoExportedAt": "2026-06-16T09:14:46Z",
+  "seoStats": {
+    "products": 4209,
+    "categories": 121,
+    "pages": 6,
+    "productsWithMetaTitle": 4209,
+    "productsWithMetaDescription": 4209
+  },
+  "seoFiles": [
+    "data/seo.json",
+    "data/seo-by-slug.json"
+  ]
+}

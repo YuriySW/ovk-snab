@@ -1,0 +1,17 @@
+.DS_Store
+*.pem
+__pycache__/
+*.pyc
+
+# raw WordPress dump (site uses web/src/data)
+/data/
+
+# Next.js
+web/node_modules/
+web/.next/
+web/out/
+web/.vercel/
+web/*.tsbuildinfo
+web/next-env.d.ts
+web/npm-debug.log*
+web/.env*
