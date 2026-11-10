@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Minus, Plus, Trash2 } from "lucide-react";
 import { useCart } from "@/lib/cart-store";
 import { formatPrice } from "@/lib/format";
+import { productHref } from "@/lib/paths";
 
 export default function CartPage() {
   const { items, setQty, remove, total, clear } = useCart();
@@ -36,7 +37,7 @@ export default function CartPage() {
                   className="grid grid-cols-[96px_1fr] gap-4 rounded-[24px] border border-line bg-white p-4 md:grid-cols-[120px_1fr_auto]"
                 >
                   <Link
-                    href={`/product/${item.slug}`}
+                    href={productHref(item.slug)}
                     className="relative aspect-square overflow-hidden rounded-2xl bg-mist"
                   >
                     {item.image ? (
@@ -51,7 +52,7 @@ export default function CartPage() {
                   </Link>
                   <div className="min-w-0">
                     <Link
-                      href={`/product/${item.slug}`}
+                      href={productHref(item.slug)}
                       className="font-medium leading-snug hover:text-copper"
                     >
                       {item.name}

@@ -6,6 +6,7 @@ import { Minus, Plus, ShoppingBag, Trash2, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useCart } from "@/lib/cart-store";
 import { formatPrice } from "@/lib/format";
+import { productHref } from "@/lib/paths";
 
 export function CartDrawer() {
   const { items, isOpen, close, setQty, remove, total } = useCart();
@@ -82,7 +83,7 @@ export function CartDrawer() {
                   className="grid grid-cols-[72px_minmax(0,1fr)] gap-3 rounded-2xl border border-line bg-white p-3"
                 >
                   <Link
-                    href={`/product/${item.slug}`}
+                    href={productHref(item.slug)}
                     onClick={close}
                     className="relative aspect-square overflow-hidden rounded-xl bg-mist"
                   >
@@ -98,7 +99,7 @@ export function CartDrawer() {
                   </Link>
                   <div className="min-w-0">
                     <Link
-                      href={`/product/${item.slug}`}
+                      href={productHref(item.slug)}
                       onClick={close}
                       className="line-clamp-2 text-sm font-medium leading-snug hover:text-copper"
                     >

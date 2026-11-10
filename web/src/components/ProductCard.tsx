@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Plus } from "lucide-react";
 import type { ProductIndex } from "@/lib/types";
 import { formatPrice } from "@/lib/format";
+import { productHref } from "@/lib/paths";
 import { useCart } from "@/lib/cart-store";
 
 export function ProductCard({ product }: { product: ProductIndex }) {
@@ -12,7 +13,7 @@ export function ProductCard({ product }: { product: ProductIndex }) {
 
   return (
     <article className="group relative flex h-full w-full min-w-0 max-w-full flex-col overflow-hidden rounded-[14px] border border-line bg-white transition duration-300 hover:border-ink/20 hover:shadow-[var(--shadow)] sm:rounded-[18px] sm:hover:-translate-y-1">
-      <Link href={`/product/${product.slug}`} className="relative block min-w-0">
+      <Link href={productHref(product.slug)} className="relative block min-w-0">
         <div className="relative aspect-square overflow-hidden bg-white">
           {product.image ? (
             <Image
@@ -43,7 +44,7 @@ export function ProductCard({ product }: { product: ProductIndex }) {
           ) : null}
         </div>
         <Link
-          href={`/product/${product.slug}`}
+          href={productHref(product.slug)}
           className="line-clamp-2 min-w-0 break-words text-[0.78rem] font-medium leading-snug text-ink group-hover:text-copper sm:text-[0.88rem]"
         >
           {product.name}
