@@ -7,7 +7,7 @@ import { useSearchParams } from "next/navigation";
 import { AddToCartButton } from "@/components/AddToCartButton";
 import { ProductCard } from "@/components/ProductCard";
 import { formatPrice } from "@/lib/format";
-import { productHref } from "@/lib/paths";
+import { assetPath, productHref } from "@/lib/paths";
 import type { Product, ProductIndex } from "@/lib/types";
 
 type SlugMap = Record<string, Product>;
@@ -126,7 +126,7 @@ export function ProductView() {
             <div className="relative aspect-square bg-white">
               {product.image ? (
                 <Image
-                  src={product.image}
+                  src={assetPath(product.image)}
                   alt={product.name}
                   fill
                   priority

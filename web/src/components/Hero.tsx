@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, PhoneCall } from "lucide-react";
+import { assetPath } from "@/lib/paths";
 
 const stats = [
   ["4 200+", "позиций на складе"],
@@ -10,7 +11,14 @@ const stats = [
 
 export function Hero() {
   return (
-    <section className="hero relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-ink text-white">
+    <section
+      className="hero relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-ink text-white"
+      style={
+        {
+          ["--hero-image" as string]: `url("${assetPath("/images/hero.jpg")}")`,
+        } as React.CSSProperties
+      }
+    >
       {/* Background: cover always fills the whole section (no transform clipping) */}
       <div className="hero-media pointer-events-none absolute inset-0" aria-hidden>
         <div className="hero-media__image absolute inset-0" />

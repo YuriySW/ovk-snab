@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Minus, Plus, Trash2 } from "lucide-react";
 import { useCart } from "@/lib/cart-store";
 import { formatPrice } from "@/lib/format";
-import { productHref } from "@/lib/paths";
+import { assetPath, productHref } from "@/lib/paths";
 
 export default function CartPage() {
   const { items, setQty, remove, total, clear } = useCart();
@@ -42,7 +42,7 @@ export default function CartPage() {
                   >
                     {item.image ? (
                       <Image
-                        src={item.image}
+                        src={assetPath(item.image)}
                         alt={item.name}
                         fill
                         className="object-contain p-2"

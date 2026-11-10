@@ -6,7 +6,7 @@ import { Minus, Plus, ShoppingBag, Trash2, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useCart } from "@/lib/cart-store";
 import { formatPrice } from "@/lib/format";
-import { productHref } from "@/lib/paths";
+import { assetPath, productHref } from "@/lib/paths";
 
 export function CartDrawer() {
   const { items, isOpen, close, setQty, remove, total } = useCart();
@@ -89,7 +89,7 @@ export function CartDrawer() {
                   >
                     {item.image ? (
                       <Image
-                        src={item.image}
+                        src={assetPath(item.image)}
                         alt={item.name}
                         fill
                         className="object-contain p-1.5"

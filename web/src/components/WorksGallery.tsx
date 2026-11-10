@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useMemo, useState } from "react";
+import { assetPath } from "@/lib/paths";
 
 type Work = {
   id: string;
@@ -49,7 +50,7 @@ export function WorksGallery({ works }: { works: Work[] }) {
               }`}
             >
               <Image
-                src={work.image}
+                src={assetPath(work.image)}
                 alt={work.title}
                 fill
                 className="object-cover transition duration-500 group-hover:scale-[1.04]"

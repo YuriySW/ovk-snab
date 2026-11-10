@@ -285,7 +285,7 @@ img {
 
 .hero-media__image {
   background-color: var(--ink);
-  background-image: url("/images/hero.jpg");
+  background-image: var(--hero-image);
   background-repeat: no-repeat;
   background-position: 72% center;
   background-size: cover;

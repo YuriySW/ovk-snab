@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Plus } from "lucide-react";
 import type { ProductIndex } from "@/lib/types";
 import { formatPrice } from "@/lib/format";
-import { productHref } from "@/lib/paths";
+import { assetPath, productHref } from "@/lib/paths";
 import { useCart } from "@/lib/cart-store";
 
 export function ProductCard({ product }: { product: ProductIndex }) {
@@ -17,7 +17,7 @@ export function ProductCard({ product }: { product: ProductIndex }) {
         <div className="relative aspect-square overflow-hidden bg-white">
           {product.image ? (
             <Image
-              src={product.image}
+              src={assetPath(product.image)}
               alt={product.name}
               fill
               className="object-contain p-1.5 transition duration-500 group-hover:scale-[1.03] sm:p-2"
